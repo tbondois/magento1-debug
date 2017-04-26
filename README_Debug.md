@@ -1,6 +1,5 @@
-# TBD_Debug README
+# About TBD_Debug
 
-## About
 
 Fork of [madalinoprea/magneto-debug](https://github.com/madalinoprea/magneto-debug) for Magento 1.9. It add a Debug toolbar on web pages (almost the same as the Symfony one) to increase productivity.
 
@@ -10,7 +9,7 @@ NOTE : This module should only be installed in dev environment, so module files 
 
 * copy files/folder from your project root
 
-* Check that your .gitignore contains these lines (or `git pull` if not) :
+* Check that your .gitignore contains these lines (or add them) :
 
 ```ignore
 #### TBD_Debug toolbar :
@@ -37,9 +36,7 @@ Pour désactiver temporairement la barre en cas de problème : editer app/etc/mo
 
 rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default/layout/tbd_debug.xml app/design/adminhtml/base/default/template/tbd_debug/ app/design/frontend/base/default/layout/tbd_debug.xml app/design/frontend/base/default/template/tbd_debug/ app/etc/modules/TBD_Debug.xml skin/adminhtml/base/default/tbd_debug/ skin/frontend/base/default/tbd_debug/ dev/firephp/
 
-## Fixes
-
-* The magento debug toolbar is a fork of [madalinoprea/magneto-debug](https://github.com/madalinoprea/magneto-debug)
+## Fork Fixes
 
 * no need of installation via modman. Just copy/paste files to your magento root path
 
