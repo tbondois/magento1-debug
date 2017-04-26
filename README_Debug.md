@@ -14,10 +14,11 @@ NOTE : This module should only be installed in dev environment, so module files 
 ```ignore
 #### TBD_Debug toolbar :
 /README_Debug.md
+/magerun*
 /app/code/community/TBD/Debug/
 TBD_Debug*
 tbd_debug*
-/magerun*
+/dev/firephp/
 ```
 
 * `php magerun cache:flush`
