@@ -1,4 +1,4 @@
-# TBD/Debug README
+# TBD_Debug README
 
 ## About
 
@@ -13,7 +13,7 @@ NOTE : This module should only be installed in dev environment, so module files 
 * Check that your .gitignore contains these lines (or `git pull` if not) :
 
 ```ignore
-#### TBD Debug toolbar :
+#### TBD_Debug toolbar :
 /README_Debug.md
 /app/code/community/TBD/Debug/
 TBD_Debug*
