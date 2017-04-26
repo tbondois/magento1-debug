@@ -29,7 +29,6 @@ tbd_debug*
 This will avoid errors related with the setup scripts which didn't execute well.
 
 
-
 ## Quick disabling
 
 Pour désactiver temporairement la barre en cas de problème : editer app/etc/modules/tbd_debug.xml, mettre <active>false</active> et re-cleaner les caches : la barre sera plus chargée
@@ -61,7 +60,8 @@ rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default
 
 
 
-# Features
+## Features
+
 - **Request and Controller information**: lists request attributes and controller that handled the request; captures request info for Ajax and POST requests
 - **Execution Timeline**: shows execution timeline based on Varien Profiler timers
 - **Logs**: shows log lines added to system and exception logs during a request
@@ -75,7 +75,7 @@ rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default
 
 Don't forget to check out [screenshots gallery](docs/images.md)
 
-# Compatibility
+## Compatibility
 
 [![Aggregated Build Status](https://travis-ci.org/madalinoprea/magneto-debug.svg)](https://travis-ci.org/madalinoprea/magneto-debug)
 
@@ -84,7 +84,7 @@ their related Magento Enterprise versions.
 
 
 
-# Common Issues
+## Common Issues
 
 - `table tbd_debug_report_info doesn't exist` : The Magento data setup didn't run. Please read the "Quick install guide" section of this file.
 
