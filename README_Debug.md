@@ -167,7 +167,8 @@ If you would like to support it on another version let us know.
     - Toolbar is displayed in these conditions:
         - module is installed and enabled
         - toolbar is enabled from Admin / System / Configuration / Advanced - Developer Debug Toolbar (by default it's enabled)
-        - Magento is running in developer mode (MAGE_IS_DEVELOPER_MODE) Or your ip is listed under under 'Developer Client Restrictions'
+        - Magento is running in developer mode (MAGE_IS_DEVELOPER_MODE) 
+		- Or your ip is listed under under 'Developer Client Restrictions'
     - Check that module name TBD_Debug is installed and enabled
     - Check that 'Allow Symlinks' configuration is enabled for Modman installation
 
