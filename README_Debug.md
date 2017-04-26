@@ -59,16 +59,6 @@ rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default
 
 
 
-
-# Original madalinoprea/magneto-debug README :
-
-[![Build Status](https://travis-ci.org/madalinoprea/magneto-debug.svg?branch=master)](https://travis-ci.org/madalinoprea/magneto-debug) [![Coveralls](https://coveralls.io/repos/github/madalinoprea/magneto-debug/badge.svg?branch=master)](https://coveralls.io/github/madalinoprea/magneto-debug)
-
-This repository represents an extension for Magento 1.x that offers a developer debug toolbar. The idea came from robhudson's [django-debug-toolbar](https://github.com/robhudson/django-debug-toolbar). Latest version is based on Symfony's WebProfilerBundle UI.
-
-![Toolbar](docs/images/frontend_toolbar_request.png)
-
-
 # Features
 - **Request and Controller information**: lists request attributes and controller that handled the request; captures request info for Ajax and POST requests
 - **Execution Timeline**: shows execution timeline based on Varien Profiler timers
@@ -83,65 +73,6 @@ This repository represents an extension for Magento 1.x that offers a developer 
 
 Don't forget to check out [screenshots gallery](docs/images.md)
 
-
-# Installation
-
-## Using Modman
-
-- Make sure you have [Modman](https://github.com/colinmollenhour/modman) installed
-- Allow symlinks for the templates directory (required for installations via Modman)
-    - Use n98-magerun like pro: `n98-magerun.phar dev:symlinks`
-    - Or just set 'Allow Symlinks' to 'Yes' from System - Configuration / Advanced / Developer / Template Settings
-
-- Install Debug Toolbar module:
-```bash
-cd [magento root folder]
-modman init
-modman clone https://github.com/madalinoprea/magneto-debug.git
-```
-- Flush Magento's cache
-
-### How to update
-I'm pretty lazy and I don't like to create Magento Connect packages. With modman you can effortlessly grab latest changes from github.
-```
-cd [magento root folder]
-modman update magneto-debug
-```
-- Flush Magento's cache
-
-## Using composer
-
-Lately, I've been more into composer and thanks to this project https://github.com/Cotya/magento-composer-installer you can use it for your Magento 1.x websites.
-
-```
-# Add package as requirement to composer.json
-composer require madalinoprea/magneto-debug
-# Clear cache and voila..
-```
-
-
-# Change Log
-
-All released versions can be found on [releases' page](https://github.com/madalinoprea/magneto-debug/releases).
-
-- Latest version: [**1.6.2**](https://github.com/madalinoprea/magneto-debug/releases/latest)
-   - Fixes e-mail capture for Magento CE 1.7 and Magento EE 1.12 #75
-
-
-# Issues, Ideas or Feedback
-
-Please don't be afraid to use [issue tracker on GitHub](https://github.com/madalinoprea/magneto-debug/issues) to report issues, ideas or any feedback. Also I encourage you to send pull requests. I'll review them, change them a bit and make sure unit tests are ok (pedantic :older_man:).
-
-
-# Roadmap
-
-[![Stories in Ready](https://badge.waffle.io/madalinoprea/magneto-debug.png?label=ready&title=Ready)](https://waffle.io/madalinoprea/magneto-debug)
-
-My goal is to have weekly releases with some meaningful features. To stay focused I use a Scrum board that shows backlog, selected work for current interation and progress.
-
-Hot fix versions are released as soon as possible, outside of our weekly release schedule and they are triggered by some :crying_cat_face:-astrophic issue.
-
-
 # Compatibility
 
 [![Aggregated Build Status](https://travis-ci.org/madalinoprea/magneto-debug.svg)](https://travis-ci.org/madalinoprea/magneto-debug)
@@ -149,12 +80,11 @@ Hot fix versions are released as soon as possible, outside of our weekly release
 Extension is (hopefully) successfully unit tested against PHP 5.4, PHP 5.5 and Magento CE 1.9, Magento CE 1.8, Magento CE 1.7 and
 their related Magento Enterprise versions.
 
-If you would like to support it on another version let us know.
 
 
 # Common Issues
 
-- `table tbd_debug_report_info` doesn't exist : The Magento data setup didn't run. Please read the "Quick install guide" section of this file.
+- `table tbd_debug_report_info doesn't exist` : The Magento data setup didn't run. Please read the "Quick install guide" section of this file.
 
 - 'Mage Registry key already exists' exception is raised after installation
     - `Mage registry key "_singleton/debug/observer" already exists` is reported when cache regeneration was corrupted.
@@ -176,16 +106,4 @@ If you would like to support it on another version let us know.
     - Toolbar is added to all pages that have a structural block named `before_body_end`. By default this block is available on all Magento pages.
     Eliminate a possible cache problem by disabling all caches. Try to determine if there are any customizations that have removed `before_body_end`.
 
-
-
-
-# Authors, contributors
-
-- [Mario O](https://twitter.com/madalinoprea)
-- [Other contributors](https://github.com/madalinoprea/magneto-debug/graphs/contributors)
-
-
-# License
-
-[MIT License](LICENSE.txt)
 
