@@ -1,17 +1,19 @@
-# About TBD/Debug
+# TBD/Debug README
+
+## About
 
 Fork of [madalinoprea/magneto-debug](https://github.com/madalinoprea/magneto-debug) for Magento 1.9. It add a Debug toolbar on web pages (almost the same as the Symfony one) to increase productivity.
 
 NOTE : This module should only be installed in dev environment, so module files should never be versionned inside a project.
 
-# Quick install guide :
+## Quick install guide :
 
 * copy files/folder from your project root
 
 * Check that your .gitignore contains these lines (or `git pull` if not) :
 
 ```ignore
-#### Debug toolbar ignore pattern :
+#### TBD Debug toolbar :
 /README_Debug.md
 /app/code/community/TBD/Debug/
 TBD_Debug*
@@ -22,20 +24,20 @@ tbd_debug*
 * `magerun cache:flush`
 
 * `magerun sys:setup:run`  to create the `tbd_debug_request_info` database table
-                         `
+
 * to disable report storage  in the the `tbd_debug_request_info` database table, enable it with a GET parameter `?nodbdebug=1`
 (ie : `/index.php?nodbdebug=1` and ` /index.php/admin?nodbdebug=1` for adminhtml. It will keep being disabled until the session is gone or a `?nodbdebug=0` parameter in GET
 
 
-# Quick disabling
+## Quick disabling
 
 Pour désactiver temporairement la barre en cas de problème : editer app/etc/modules/tbd_debug.xml, mettre <active>false</active> et re-cleaner les caches : la barre sera plus chargée
 
-# Uninstall :
+## Uninstall :
 
 rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default/layout/tbd_debug.xml app/design/adminhtml/base/default/template/tbd_debug/ app/design/frontend/base/default/layout/tbd_debug.xml app/design/frontend/base/default/template/tbd_debug/ app/etc/modules/TBD_Debug.xml skin/adminhtml/base/default/tbd_debug/ skin/frontend/base/default/tbd_debug/ dev/firephp/
 
-# Fixes
+## Fixes
 
 * The magento debug toolbar is a fork of [madalinoprea/magneto-debug](https://github.com/madalinoprea/magneto-debug)
 
@@ -52,9 +54,9 @@ rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default
 * Le block wishlist item n'est plus profilé, parce que ca faisait crasher le magento. le modele est mal surchargé et utilisé pour les dossiers de croisiere. Il y a une explication pour rajouter d'autres exceptions en cas de crash sur d'autres pages.
 
 
-# Hints
+## Hints
 
-* Vous devrez voir une barre sur donf noir en bas des pages. L'onglet le plus intéressant est celui permettant de voir le des blocks et layout. Il y a moyen d'activer du profiling en db.
+* Vous devrez voir une barre sur fond noir en bas des pages. L'onglet le plus intéressant est celui permettant de voir le des blocks et layout. Il y a moyen d'activer du profiling en db.
 
 * *Template Hints : Enable* dans le menu a droite est bien pratique aussi pour voir le découpage des phtml et des blocks
 
@@ -70,7 +72,7 @@ This repository represents an extension for Magento 1.x that offers a developer 
 ![Toolbar](docs/images/frontend_toolbar_request.png)
 
 
-# Features 
+# Features
 - **Request and Controller information**: lists request attributes and controller that handled the request; captures request info for Ajax and POST requests
 - **Execution Timeline**: shows execution timeline based on Varien Profiler timers
 - **Logs**: shows log lines added to system and exception logs during a request
