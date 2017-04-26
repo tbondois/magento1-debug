@@ -17,7 +17,7 @@ NOTE : This module should only be installed in dev environment, so module files 
 /app/code/community/TBD/Debug/
 TBD_Debug*
 tbd_debug*
-/magerun
+/magerun*
 ```
 
 * `php magerun cache:flush`
