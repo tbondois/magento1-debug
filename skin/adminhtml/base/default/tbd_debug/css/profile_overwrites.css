@@ -1,0 +1,21 @@
+/*
+Additions to profile.css
+*/
+
+.header-info {
+    width: 100%;
+}
+
+th.sortable  {
+    cursor: pointer;
+}
+
+/* we really want nowrap */
+
+#queries th {
+    white-space: nowrap;
+}
+
+#collections-table pre {
+    white-space: normal;
+}
