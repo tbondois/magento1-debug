@@ -20,9 +20,9 @@ tbd_debug*
 /magerun.phar
 ```
 
-* `php magerun.phar cache:flush`
+* `php magerun cache:flush`
 
-* `php magerun.phar sys:setup:run`  to create the `tbd_debug_request_info` database table
+* `php magerun sys:setup:run`  to create the `tbd_debug_request_info` database table
 
 * To disable report storage  in the the `tbd_debug_request_info` database table, enable it with a GET parameter `?nodbdebug=1`
 (ie : `/index.php?nodbdebug=1` and ` /index.php/admin?nodbdebug=1` for adminhtml. It will keep being disabled until the session is gone or a `?nodbdebug=0` parameter in GET.
