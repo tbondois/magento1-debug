@@ -25,7 +25,9 @@ tbd_debug*
 * `magerun sys:setup:run`  to create the `tbd_debug_request_info` database table
 
 * to disable report storage  in the the `tbd_debug_request_info` database table, enable it with a GET parameter `?nodbdebug=1`
-(ie : `/index.php?nodbdebug=1` and ` /index.php/admin?nodbdebug=1` for adminhtml. It will keep being disabled until the session is gone or a `?nodbdebug=0` parameter in GET
+(ie : `/index.php?nodbdebug=1` and ` /index.php/admin?nodbdebug=1` for adminhtml. It will keep being disabled until the session is gone or a `?nodbdebug=0` parameter in GET.
+This will avoid errors related with the setup scripts which didn't execute well.
+
 
 
 ## Quick disabling
