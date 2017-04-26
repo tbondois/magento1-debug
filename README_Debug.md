@@ -48,7 +48,7 @@ rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default
 
 * Look for `@fixes` to see all my changes
 
-* Le block wishlist item n'est plus profilé, parce que ca faisait crasher le magento. le modele est mal surchargé et utilisé pour les dossiers de croisiere. Il y a une explication pour rajouter d'autres exceptions en cas de crash sur d'autres pages.
+* Le block wishlist item n'est plus profilé, parce que ca faisait crasher magento. Il y a une explication pour rajouter d'autres exceptions en cas de crash sur d'autres pages.
 
 
 ## Hints
