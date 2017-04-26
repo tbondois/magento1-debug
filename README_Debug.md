@@ -154,6 +154,8 @@ If you would like to support it on another version let us know.
 
 # Common Issues
 
+- `table tbd_debug_report_info` doesn't exist : The Magento data setup didn't run. Please read the "Quick install guide" section of this file.
+
 - 'Mage Registry key already exists' exception is raised after installation
     - `Mage registry key "_singleton/debug/observer" already exists` is reported when cache regeneration was corrupted.
     Please try to flush Magento cache.
