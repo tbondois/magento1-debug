@@ -17,12 +17,12 @@ NOTE : This module should only be installed in dev environment, so module files 
 /app/code/community/TBD/Debug/
 TBD_Debug*
 tbd_debug*
-/dev/firephp/
+/magerun.phar
 ```
 
-* `magerun cache:flush`
+* `php magerun.phar cache:flush`
 
-* `magerun sys:setup:run`  to create the `tbd_debug_request_info` database table
+* `php magerun.phar sys:setup:run`  to create the `tbd_debug_request_info` database table
 
 * To disable report storage  in the the `tbd_debug_request_info` database table, enable it with a GET parameter `?nodbdebug=1`
 (ie : `/index.php?nodbdebug=1` and ` /index.php/admin?nodbdebug=1` for adminhtml. It will keep being disabled until the session is gone or a `?nodbdebug=0` parameter in GET.
@@ -35,7 +35,7 @@ Pour désactiver temporairement la barre en cas de problème : editer app/etc/mo
 
 ## Uninstall :
 
-rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default/layout/tbd_debug.xml app/design/adminhtml/base/default/template/tbd_debug/ app/design/frontend/base/default/layout/tbd_debug.xml app/design/frontend/base/default/template/tbd_debug/ app/etc/modules/TBD_Debug.xml skin/adminhtml/base/default/tbd_debug/ skin/frontend/base/default/tbd_debug/ dev/firephp/
+rm -rf README_Debug.md app/code/community/TBD/ app/design/adminhtml/base/default/layout/tbd_debug.xml app/design/adminhtml/base/default/template/tbd_debug/ app/design/frontend/base/default/layout/tbd_debug.xml app/design/frontend/base/default/template/tbd_debug/ app/etc/modules/TBD_Debug.xml skin/adminhtml/base/default/tbd_debug/ skin/frontend/base/default/tbd_debug/ dev/firephp/ magerun.phar
 
 ## Fork Fixes
 
