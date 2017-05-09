@@ -36,7 +36,7 @@ Pour désactiver temporairement la barre en cas de problème : editer app/etc/mo
 ## Uninstall :
 
 ```bash
-rm -rf magerun app/code/community/TBD/ app/design/adminhtml/base/default/layout/tbd_debug.xml app/design/adminhtml/base/default/template/tbd_debug/ app/design/frontend/base/default/layout/tbd_debug.xml app/design/frontend/base/default/template/tbd_debug/ app/etc/modules/TBD_Debug.xml skin/adminhtml/base/default/tbd_debug/ skin/frontend/base/default/tbd_debug/ dev/firephp/ README_Debug.md CHANGELOG_Debug.md
+rm -rf magerun app/etc/modules/TBD_Debug.xml app/code/community/TBD/ app/design/adminhtml/base/default/layout/tbd_debug.xml app/design/adminhtml/base/default/template/tbd_debug/ app/design/frontend/base/default/layout/tbd_debug.xml app/design/frontend/base/default/template/tbd_debug/ app/etc/modules/TBD_Debug.xml skin/adminhtml/base/default/tbd_debug/ skin/frontend/base/default/tbd_debug/ dev/firephp/ README_Debug.md CHANGELOG_Debug.md
 ```
 
 ## Fork Fixes
