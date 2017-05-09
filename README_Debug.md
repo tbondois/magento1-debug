@@ -18,7 +18,6 @@ NOTE : This module should only be installed in dev environment, so module files 
 /app/code/community/TBD/Debug/
 TBD_Debug*
 tbd_debug*
-/dev/firephp/
 ```
 
 * `php magerun cache:flush`

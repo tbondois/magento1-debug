@@ -1,5 +1,0 @@
-RewriteEngine on
-
-RewriteBase /demo
-
-RewriteRule ^.*  index.php
