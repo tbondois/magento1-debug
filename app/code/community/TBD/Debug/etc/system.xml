@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-
 <config>
     <sections>
         <tbd_debug translate="label" module="tbd_debug">

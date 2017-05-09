@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
-
 <config>
     <modules>
         <TBD_Debug>
-            <version>1.7.0</version>
+            <version>1.7.1</version>
         </TBD_Debug>
     </modules>
-
     <global>
         <models>
             <tbd_debug>

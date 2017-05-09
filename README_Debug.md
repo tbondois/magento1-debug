@@ -1,5 +1,5 @@
-# About TBD_Debug
-
+About TBD_Debug
+==============================
 
 Fork of [madalinoprea/magneto-debug](https://github.com/madalinoprea/magneto-debug) for Magento 1.9. It add a Debug toolbar on web pages (almost the same as the Symfony one) to increase productivity.
 
@@ -111,3 +111,6 @@ their related Magento Enterprise versions.
     Eliminate a possible cache problem by disabling all caches. Try to determine if there are any customizations that have removed `before_body_end`.
 
 
+- Fatal error while running unit tests
+   - If you get error `PHP Fatal error: Uncaught exception 'Exception' with message 'Warning: session_start(): Cannot send session cookie headers already sent by ` you should review your phpunit configuration file and redirect phpunit output to stderr, please check my configuration file from phpunit.xml
+   - More details can be found here #83
