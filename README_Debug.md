@@ -1,5 +1,5 @@
-Magneto-debug / Sheep_Debug for Magento 1.x - Ready To Paste
-==================================================================
+Magneto-Debug / Sheep-Debug for Magento 1  - Ready To Paste
+===========================================================
 
 ## Version
 
