@@ -12,7 +12,7 @@ Fork Changes : version Ready To Copy-Paste, magerun inclusion, TBD Logo
 
 * Method 1 : Copy files/folder from your project root
 
-* Method 2 : via git : 
+* Method 2 : via git (easiest way to update sources)
 ```git
 git remote add debug ssh://git@gitlab.agence-tbd.com:2015/products/TBD_Debug.git
 git pull debug master
