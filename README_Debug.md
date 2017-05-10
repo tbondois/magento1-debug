@@ -14,11 +14,12 @@ Pour désactiver temporairement la barre en cas de problème : editer app/etc/mo
 
 ```ignore
 #### TBD_Debug toolbar :
+Sheep/Debug
+sheep_debug
+sheep_debug.xml
+Sheep_Debug.xml
 /README_Debug.md
 /*magerun*
-/app/code/community/TBD/Debug/
-TBD_Debug*
-tbd_debug*
 ```
 
 * `php magerun cache:flush`
