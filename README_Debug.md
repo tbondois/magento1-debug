@@ -14,8 +14,8 @@ Fork Changes : version Ready To Copy-Paste, magerun inclusion, TBD Logo
 
 * Method 2 : via git (easiest way to update sources)
 ```git
-git remote add debug ssh://git@gitlab.agence-tbd.com:2015/products/TBD_Debug.git
-git pull debug master
+git remote add tbd_debug ssh://git@gitlab.agence-tbd.com:2015/products/TBD_Debug.git
+git pull tbd_debug master
 ```
 
 * Then Check that your root project `.gitignore` file contains these lines (or add them) :
