@@ -12,17 +12,19 @@ Fork Changes : version Ready To Copy-Paste, magerun inclusion, TBD Logo
 
 * Method 1 : Copy files/folder from your project root
 
-* Method 2 : via git (easiest way to update sources)
+* Method 2 : via git (can be easier for distant access)
 ```git
 git remote add tbd_debug ssh://git@gitlab.agence-tbd.com:2015/products/TBD_Debug.git
-git fetch tbd_debug master
+rm -rf magerun app/code/community/Sheep/Debug app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/default/layout/sheep_debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/layout/sheep_debug.xml app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
+git fetch tbd_debug master & git merge tbd_debug/master --no-commit --ff
+git reset HEAD magerun app/code/community/Sheep/ app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/default/layout/sheep_debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/layout/sheep_debug.xml app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
 git remote remove tbd_debug
 ```
 
 * Then Check that your root project `.gitignore` file contains these lines (or add them) :
 
 ```ignore
-#### TBD_Debug toolbar :
+#### Sheep_Debug Magento Toolbar:
 Sheep/Debug
 sheep_debug
 sheep_debug.xml
@@ -44,7 +46,7 @@ Pour désactiver temporairement la barre en cas de problème : editer app/etc/mo
 ## Uninstall :
 
 ```bash
-rm -rf magerun app/etc/modules/Sheep_Debug.xml app/code/community/Sheep/ app/design/adminhtml/base/default/layout/sheep_debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/layout/sheep_debug.xml app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
+rm -rf magerun app/code/community/Sheep/ app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/default/layout/sheep_debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/layout/sheep_debug.xml app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
 ```
 
 ## Hints
