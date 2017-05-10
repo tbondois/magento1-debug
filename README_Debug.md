@@ -29,7 +29,7 @@ Sheep_Debug.xml
 ## Uninstall :
 
 ```bash
-rm -rf magerun app/etc/modules/Sheep_Debug.xml app/code/community/Sheep/Debug app/design/adminhtml/base/default/layout/sheep_debug.xml app/design/adminhtml/base/default/template/sheep_debug/ app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/
+rm -rf magerun app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/
 ```
 
 ## Hints
