@@ -42,7 +42,9 @@ rm -rf magerun app/etc/modules/Sheep_Debug.xml app/code/community/Sheep/Debug ap
 
 ## Hints
 
-* Vous devrez voir une barre sur fond noir en bas des pages. L'onglet le plus intéressant est celui permettant de voir le des blocks et layout. Il y a moyen d'activer du profiling en db.
+* Vous devrez voir une barre sur fond noir en bas des pages. L'onglet le plus intéressant est le 1er, Magento Profiler, permettant de voir le des blocks et layout chargés. Il nécéssite que le profiling soit persisté en DB (activé par défaut)
+
+* Configuration des options : via le menu à droite de la toobar, ou System > Configuration > Advanced : Developper Debug Toolbar 
 
 * *Template Hints : Enable* dans le menu a droite est bien pratique aussi pour voir le découpage des phtml et des blocks
 
