@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Sheep_Debug>
+            <version>1.8.1</version>
+        </Sheep_Debug>
+    </modules>
+
+    <global>
+        <models>
+            <sheep_debug>
+                <class>Sheep_Debug_Model</class>
+                <resourceModel>sheep_debug_resource</resourceModel>
+            </sheep_debug>
+            <sheep_debug_resource>
+                <class>Sheep_Debug_Model_Resource</class>
+                <entities>
+                    <request_info>
+                        <table>sheep_debug_request_info</table>
+                    </request_info>
+                </entities>
+            </sheep_debug_resource>
+            <core>
+                <rewrite>
+                    <email>Sheep_Debug_Model_Core_Email</email>
+                    <email_template>Sheep_Debug_Model_Core_Email_Template</email_template>
+                </rewrite>
+            </core>
+        </models>
+
+        <resources>
+            <sheep_debug_setup>
+                <setup>
+                    <module>Sheep_Debug</module>
+                </setup>
+            </sheep_debug_setup>
+        </resources>
+
+        <blocks>
+            <sheep_debug>
+                <class>Sheep_Debug_Block</class>
+            </sheep_debug>
+        </blocks>
+
+        <helpers>
+            <sheep_debug>
+                <class>Sheep_Debug_Helper</class>
+            </sheep_debug>
+        </helpers>
+
+        <events>
+            <!-- Start of request processing -->
+            <controller_front_init_before>
+                <observers>
+                    <sheep_debug>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onControllerFrontInitBefore</method>
+                    </sheep_debug>
+                </observers>
+            </controller_front_init_before>
+
+            <!-- Records all instantiated blocks -->
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <debug_observer>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onLayoutGenerate</method>
+                    </debug_observer>
+                </observers>
+            </controller_action_layout_generate_blocks_after>
+
+            <!-- Records rendered blocks and their rendering start time -->
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <debug_observer>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onBlockToHtml</method>
+                    </debug_observer>
+                </observers>
+            </core_block_abstract_to_html_before>
+
+            <!-- Records blocks rendering end time -->
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <debug_observer>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onBlockToHtmlAfter</method>
+                    </debug_observer>
+                </observers>
+            </core_block_abstract_to_html_after>
+
+            <!-- Records request properties (current route, original request path, etc) -->
+            <controller_action_postdispatch>
+                <observers>
+                    <debug_observer>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onActionPostDispatch</method>
+                    </debug_observer>
+                </observers>
+            </controller_action_postdispatch>
+
+            <!-- Records loaded collections -->
+            <core_collection_abstract_load_before>
+                <observers>
+                    <debug_observer>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onCollectionLoad</method>
+                    </debug_observer>
+                </observers>
+            </core_collection_abstract_load_before>
+
+            <!-- Records loaded EAV collections -->
+            <eav_collection_abstract_load_before>
+                <observers>
+                    <debug_observer>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onCollectionLoad</method>
+                    </debug_observer>
+                </observers>
+            </eav_collection_abstract_load_before>
+
+            <!-- Records loaded models -->
+            <model_load_after>
+                <observers>
+                    <debug_observer>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onModelLoad</method>
+                    </debug_observer>
+                </observers>
+            </model_load_after>
+
+
+            <!-- TODO: candidate to be removed -->
+            <controller_action_predispatch>
+                <observers>
+                    <debug_observer>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onActionPreDispatch</method>
+                    </debug_observer>
+                </observers>
+            </controller_action_predispatch>
+
+            <!-- Last change from Magento to save everything, we'll also try to save it from a PHP shutdown callback -->
+            <controller_front_send_response_after>
+                <observers>
+                    <sheep_debug>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onControllerFrontSendResponseAfter</method>
+                    </sheep_debug>
+                </observers>
+            </controller_front_send_response_after>
+
+            <!-- Instruct website restriction module to allow our requests -->
+            <websiterestriction_frontend>
+                <observers>
+                    <sheep_debug>
+                        <type>singleton</type>
+                        <class>sheep_debug/observer</class>
+                        <method>onWebsiteRestriction</method>
+                    </sheep_debug>
+                </observers>
+            </websiterestriction_frontend>
+        </events>
+    </global>
+
+    <frontend>
+        <routers>
+            <sheep_debug>
+                <use>standard</use>
+                <args>
+                    <module>Sheep_Debug</module>
+                    <frontName>sheep_debug</frontName>
+                </args>
+            </sheep_debug>
+        </routers>
+
+        <layout>
+            <updates>
+                <sheep_debug>
+                    <file>sheep_debug.xml</file>
+                </sheep_debug>
+            </updates>
+        </layout>
+
+
+    </frontend>
+
+    <!-- adminhtml configuration -->
+    <adminhtml>
+        <layout>
+            <updates>
+                <sheep_debug>
+                    <file>sheep_debug.xml</file>
+                </sheep_debug>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <crontab>
+        <jobs>
+            <sheep_debug_delete_expired_requests>
+                <schedule>
+                    <cron_expr>0 5 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>sheep_debug/cron::deleteExpiredRequests</model>
+                </run>
+            </sheep_debug_delete_expired_requests>
+        </jobs>
+    </crontab>
+
+    <!-- Default settings -->
+    <default>
+        <sheep_debug>
+            <options>
+                <enable>1</enable>
+                <persist>1</persist>
+                <persist_expiration>1</persist_expiration>
+                <force_varien_profile>1</force_varien_profile>
+                <use_store_locale>0</use_store_locale>
+                <capture_sql_stacktrace>1</capture_sql_stacktrace>
+                <strip_zend_db_traces>1</strip_zend_db_traces>
+                <trim_magento_basedir>1</trim_magento_basedir>
+            </options>
+        </sheep_debug>
+    </default>
+
+    <phpunit>
+        <suite>
+            <modules>
+                <Sheep_Debug />
+            </modules>
+        </suite>
+    </phpunit>
+</config>

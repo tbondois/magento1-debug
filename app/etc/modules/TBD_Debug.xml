@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config>
-    <modules>
-        <TBD_Debug>
-            <active>true</active>
-            <codePool>community</codePool>
-        </TBD_Debug>
-    </modules>
-</config>

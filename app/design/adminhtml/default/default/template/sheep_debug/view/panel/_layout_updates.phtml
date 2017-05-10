@@ -1,0 +1,45 @@
+<?php
+/** @var Sheep_Debug_Block_View $this */
+
+$layoutUpdates = $this->getData('file_updates');
+$dbUpdates = $this->getData('db_updates');
+?>
+
+<?php if ($layoutUpdates): ?>
+    <table>
+    <tbody>
+    <?php foreach ($layoutUpdates as $filename => $updates): ?>
+        <tr><th><?php echo $this->escapeHtml($filename); ?></th></tr>
+        <?php foreach ($updates as $update): ?>
+            <tr>
+                <td>
+                    <pre><code class="xml lazy-code-snippet"><?php echo $this->escapeHtml($update) ?></code></pre>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
+    </tbody>
+    </table>
+<?php else: ?>
+    <div class="empty"><?php echo $this->__('No Data'); ?></div>
+<?php endif; ?>
+
+<?php if ($dbUpdates): ?>
+    <h3><?php echo $this->__('Database Layout Updates'); ?></h3>
+    <table>
+        <thead>
+            <th scope="col"><?php echo $this->__('Layout Update Id'); ?></th>
+            <th scope="col"><?php echo $this->__('XML'); ?></th>
+        </thead>
+        <tbody>
+        <?php foreach ($dbUpdates as $layoutUpdateId => $xml): ?>
+            <tr>
+                <td><?php echo $this->escapeHtml($layoutUpdateId); ?></td>
+                <td>
+                    <code class="xml lazy-code-snippet"><?php echo $this->escapeHtml($xml) ?></code>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>

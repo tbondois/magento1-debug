@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<layout version="1.5.1">
+    <default>
+        <reference name="head">
+            <reference name="head">
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>sheep_debug/js/toolbar.js</name>
+                </action>
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>sheep_debug/js/profile.js</name>
+                </action>
+                <action method="addItem">
+                    <type>skin_css</type>
+                    <name>sheep_debug/css/toolbar.css</name>
+                </action>
+            </reference>
+        </reference>
+
+        <reference name="before_body_end">
+            <block type="sheep_debug/toolbar" name="debug_panels" template="sheep_debug/toolbar.phtml" after="-">
+                <block type="sheep_debug/controller" name="debug_controller_panel" template="sheep_debug/panel/controller.phtml"/>
+                <block type="sheep_debug/db" name="debug_models_panel" template="sheep_debug/panel/db.phtml"/>
+                <block type="sheep_debug/panel" name="debug_design_panel" template="sheep_debug/panel/layout.phtml"/>
+                <block type="sheep_debug/logging" name="debug_logs_panel" template="sheep_debug/panel/logging.phtml"/>
+
+                <!-- Aligned to right -->
+                <block type="sheep_debug/config" name="debug_config_panel" template="sheep_debug/panel/config.phtml"/>
+                <block type="sheep_debug/util" name="debug_utils_panel" template="sheep_debug/panel/utilities.phtml"/>
+            </block>
+        </reference>
+    </default>
+
+    <sheep_debug translate="label" module="sheep_debug">
+        <label>Developer Toolbar</label>
+        <block type="page/html" name="root" output="toHtml" template="sheep_debug/view/1column.phtml">
+
+            <block type="sheep_debug/view" name="sheep_debug_summary" as="sheep_debug_summary" template="sheep_debug/view/summary.phtml"/>
+
+            <!-- Insert your blocks here -->
+            <block type="core/text_list" name="sheep_debug_content" translate="label">
+                <label>Debug Main Content</label>
+
+                <!-- children blocks are dynamically added -->
+            </block>
+
+            <block type="core/text_list" name="sheep_debug_sidebar">
+                <block type="sheep_debug/view_sidebar" name="sheep_debug_sidebar_shortcuts" template="sheep_debug/view/sidebar_shortcuts.phtml"/>
+                <block type="sheep_debug/view" name="sheep_debug_sidebar_menu" template="sheep_debug/view/sidebar_menu.phtml"/>
+            </block>
+
+        </block>
+    </sheep_debug>
+
+    <sheep_debug_index_view>
+        <update handle="sheep_debug"/>
+    </sheep_debug_index_view>
+
+    <sheep_debug_index_search>
+        <update handle="sheep_debug"/>
+
+        <!-- remove summary on listing page -->
+        <remove name="sheep_debug_summary"/>
+        <remove name="sheep_debug_sidebar_menu"/>
+
+        <reference name="sheep_debug_sidebar_shortcuts">
+            <action method="setData"><key>show_search_form</key><value>1</value></action>
+        </reference>
+
+        <reference name="sheep_debug_content">
+            <block type="sheep_debug/view" name="sheep_debug_list" template="sheep_debug/view/list.phtml"/>
+        </reference>
+
+    </sheep_debug_index_search>
+
+</layout>
