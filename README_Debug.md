@@ -1,9 +1,11 @@
-Magneto-debug / Sheep_Debug v1.8.2 for Magento 1.x - Ready To Paste
+Magneto-debug / Sheep_Debug for Magento 1.x - Ready To Paste
 ==================================================================
 
-## Quick disabling
+## Version
 
-Pour désactiver temporairement la barre en cas de problème : editer app/etc/modules/sheep_debug.xml, mettre <active>false</active> et re-cleaner les caches : la barre sera plus chargée
+Fork from [madalinoprea/magneto-debug v1.8.2](https://github.com/madalinoprea/magneto-debug/tree/release/1.8.2)  (badly flagged as 1.8.1 in config.xml)
+
+Fork Changes : version Ready To Copy-Paste, magerun inclusion, TBD Logo
 
 
 ## Quick install guide :
@@ -26,10 +28,16 @@ Sheep_Debug.xml
 
 * `php magerun sys:setup:run`  to create the `sheep_debug_request_info` database table
 
+
+ ## Quick disabling
+
+Pour désactiver temporairement la barre en cas de problème : editer app/etc/modules/sheep_debug.xml, mettre <active>false</active> et re-cleaner les caches : la barre sera plus chargée.
+
+
 ## Uninstall :
 
 ```bash
-rm -rf magerun app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/
+rm -rf magerun app/etc/modules/Sheep_Debug.xml app/code/community/Sheep/Debug app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
 ```
 
 ## Hints
@@ -38,7 +46,7 @@ rm -rf magerun app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/defa
 
 * *Template Hints : Enable* dans le menu a droite est bien pratique aussi pour voir le découpage des phtml et des blocks
 
-
+## magneto-debug README :
 
 
 [![Build Status](https://travis-ci.org/madalinoprea/magneto-debug.svg?branch=master)](https://travis-ci.org/madalinoprea/magneto-debug) [![Coveralls](https://coveralls.io/repos/github/madalinoprea/magneto-debug/badge.svg?branch=master)](https://coveralls.io/github/madalinoprea/magneto-debug)
