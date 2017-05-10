@@ -10,9 +10,15 @@ Fork Changes : version Ready To Copy-Paste, magerun inclusion, TBD Logo
 
 ## Quick install guide :
 
-* Copy files/folder from your project root
+* Method 1 : Copy files/folder from your project root
 
-* Check that your .gitignore contains these lines (or add them) :
+* Method 2 : via git : 
+```git
+git remote add debug ssh://git@gitlab.agence-tbd.com:2015/products/TBD_Debug.git
+git pull debug master
+```
+
+* Then Check that your root project `.gitignore` file contains these lines (or add them) :
 
 ```ignore
 #### TBD_Debug toolbar :
