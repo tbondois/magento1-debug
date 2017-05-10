@@ -48,7 +48,7 @@ rm -rf magerun app/etc/modules/Sheep_Debug.xml app/code/community/Sheep/Debug ap
 
 * *Template Hints : Enable* dans le menu a droite est bien pratique aussi pour voir le découpage des phtml et des blocks
 
-## magneto-debug README :
+## Madalinoprea/magneto-debug original README :
 
 
 [![Build Status](https://travis-ci.org/madalinoprea/magneto-debug.svg?branch=master)](https://travis-ci.org/madalinoprea/magneto-debug) [![Coveralls](https://coveralls.io/repos/github/madalinoprea/magneto-debug/badge.svg?branch=master)](https://coveralls.io/github/madalinoprea/magneto-debug)
