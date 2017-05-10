@@ -15,7 +15,8 @@ Fork Changes : version Ready To Copy-Paste, magerun inclusion, TBD Logo
 * Method 2 : via git (easiest way to update sources)
 ```git
 git remote add tbd_debug ssh://git@gitlab.agence-tbd.com:2015/products/TBD_Debug.git
-git pull tbd_debug master
+git fetch tbd_debug master
+git remote remove tbd_debug
 ```
 
 * Then Check that your root project `.gitignore` file contains these lines (or add them) :
@@ -43,7 +44,7 @@ Pour désactiver temporairement la barre en cas de problème : editer app/etc/mo
 ## Uninstall :
 
 ```bash
-rm -rf magerun app/etc/modules/Sheep_Debug.xml app/code/community/Sheep/Debug app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
+rm -rf magerun app/etc/modules/Sheep_Debug.xml app/code/community/Sheep/ app/design/adminhtml/base/default/layout/sheep_debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/layout/sheep_debug.xml app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
 ```
 
 ## Hints
