@@ -5,7 +5,7 @@ Magneto-Debug / Sheep-Debug for Magento 1  - Ready To Paste
 
 Fork from [madalinoprea/magneto-debug v1.8.2](https://github.com/madalinoprea/magneto-debug/tree/release/1.8.2)  (badly flagged as 1.8.1 in config.xml)
 
-Fork Changes : version Ready To Copy-Paste, magerun inclusion, TBD Logo
+Fork Changes : version Ready To Copy-Paste, magerun inclusion
 
 
 ## Quick install guide :
@@ -14,11 +14,11 @@ Fork Changes : version Ready To Copy-Paste, magerun inclusion, TBD Logo
 
 * Method 2 : via git (can be easier for distant access)
 ```git
-git remote add tbd_debug ssh://git@gitlab.agence-tbd.com:2015/products/TBD_Debug.git
+git remote add debug <repository ssh url>
 rm -rf magerun app/code/community/Sheep/Debug app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/default/layout/sheep_debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/layout/sheep_debug.xml app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
-git fetch tbd_debug master & git merge tbd_debug/master --no-commit --ff
-git reset HEAD magerun app/code/community/Sheep/ app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/default/layout/sheep_debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/layout/sheep_debug.xml app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
-git remote remove tbd_debug
+git fetch debug master & git merge debug/master --no-commit --ff
+git reset HEAD magerun app/code/community/Sheep/Debug app/etc/modules/Sheep_Debug.xml app/design/adminhtml/default/default/layout/sheep_debug.xml app/design/adminhtml/default/default/template/sheep_debug/ app/design/frontend/base/default/layout/sheep_debug.xml app/design/frontend/base/default/template/sheep_debug/  skin/adminhtml/base/default/sheep_debug/ skin/frontend/base/default/sheep_debug/ README_Debug.md
+git remote remove debug
 ```
 
 * Then Check that your root project `.gitignore` file contains these lines (or add them) :
